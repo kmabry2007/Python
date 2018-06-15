@@ -11,7 +11,7 @@ def fwl():
     freq = float(f1)
     length = 1005/freq
     # convert length from float to string.
-    L = format(length, '.7g')  # give 12 significant digits
+    L = format(length, '.2f')  
     print(L)
     # print result in a messagebox
     messagebox.showinfo('Length in feet', L)
@@ -24,7 +24,7 @@ def hwd():
     freq = float(f1)
     length = 468/freq
     # convert length from float to string.
-    L = format(length, '.7g')  # give 12 significant digits
+    L = format(length, '.2f')
     print(L)
     # print result in a messagebox
     messagebox.showinfo('Length in feet', L)
