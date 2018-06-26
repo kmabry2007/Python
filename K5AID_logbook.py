@@ -30,7 +30,7 @@ def tick():
 #
 
 def save_qso():
-	#
+	new_qso_record = []
 	date_qso.config(state = 'normal', relief = 'flat')
 	start_qso.config(state = 'normal', relief = 'raised')
 	end_qso.config(state = 'normal',  relief = 'raised')
@@ -43,14 +43,14 @@ def save_qso():
 	nrec3 = e3.get()
 	nrec4 = e4.get()
 	nrec5 = e5.get()
-	nrec6 = e6.get()
+	# removed e6, which was last name.. unnecessary
 	nrec7 =e7.get()
 	m=e8.get()
 	p = e9.get()
 	#print (qdate, qtime_start, qtime_end)
-	#newrecord = list(nrec1, nrec2, nrec3, nrec4, nrec5, nrec6, nrec7, m, p)
-	print(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, nrec5, nrec6, nrec7, state_listbox.curselection(), m, p)
-	#
+	#new_qso_record = list(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, nrec5, nrec6, nrec7, state_listbox.get(state_listbox.curselection()), m, p)
+	#print(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, nrec5, nrec7, state_listbox.get(state_listbox.curselection()), m, p)
+	print(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, p, m, nrec5, nrec7, state_listbox.get(state_listbox.curselection()))
 	# create a list, then append it to the file.
 	#
 	# reset button text
@@ -353,8 +353,8 @@ Label(top, text= 'Station', font = 'Piboto 14').grid(row=4)
 Label(top, text ='Frequency', font = 'Piboto 14').grid(row=5)
 Label(top, text = 'Report Sent', font = 'Piboto 14').grid(row =6)
 Label(top, text = 'Report Recvd', font = 'Piboto 14').grid(row =7)
-Label(top, text='First Name', font = 'Piboto 14').grid(row=8)
-Label(top, text='Last Name', font = 'Piboto 14').grid(row=9)
+Label(top, text='Name', font = 'Piboto 14').grid(row=8)
+#Label(top, text='Last Name', font = 'Piboto 14').grid(row=9)
 Label(top, text = 'City', font = 'Piboto 14').grid(row=10)
 Label(top, text = 'State', font = 'Piboto 14').grid(row=12, column =0)
 Label(top, text ='Power', font = 'Piboto 14').grid(row=4, column = 2)
@@ -393,7 +393,7 @@ e2.insert(END, '50.125')
 e3 = Entry(top, font = 'Piboto 14', background = 'light grey', selectbackground = 'blue', selectforeground ='yellow') #
 e4 = Entry(top, font = 'Piboto 14', background = 'light grey', selectbackground = 'blue', selectforeground ='yellow') #
 e5 = Entry(top, font = 'Piboto 14', background = 'light grey', selectbackground = 'blue', selectforeground ='yellow') #
-e6 = Entry(top, font = 'Piboto 14', background = 'light grey', selectbackground = 'blue', selectforeground ='yellow') #
+#e6 = Entry(top, font = 'Piboto 14', background = 'light grey', selectbackground = 'blue', selectforeground ='yellow') #
 e7 = Entry(top, font = 'Piboto 14', background = 'light grey', selectbackground = 'blue', selectforeground ='yellow') #
 e8 = Entry(top, font = 'Piboto 14', background = 'light grey', width = 4, selectbackground = 'blue', selectforeground ='yellow') # power
 e8.insert(END, '100')
@@ -405,14 +405,16 @@ state_listbox = Listbox(top, background = 'light grey', selectbackground = 'blue
 for item in state_list:
     state_listbox.insert(END, item)
     state_listbox.grid(row= 12, column =1)
-
+#
+#need to find a way to select from a listbox
+#
 
 e3.grid(row=6, column=1)
 e3.insert(END, '59')
 e4.grid(row=7, column=1)
 e4.insert(END, '59')
 e5.grid(row=8, column =1)
-e6.grid(row=9, column =1)
+#e6.grid(row=9, column =1)
 e7.grid(row=10, column =1)
 e8.grid(row = 4, column = 3)
 e9.grid(row = 5, column = 3)
@@ -431,7 +433,7 @@ Label(bottom, text='Power', font = 'Piboto 14').grid(row=1, column = 8)
 Label(bottom, text='Name', font = 'Piboto 14').grid(row=1, column = 9)
 Label(bottom, text='City', font = 'Piboto 14').grid(row=1, column = 10)
 Label(bottom, text='State', font = 'Piboto 14').grid(row=1, column = 11)
-Label(bottom, text='Country', font = 'Piboto 14').grid(row=1, column = 12)
+
 
 
 # Make an entry box for Grid Square
