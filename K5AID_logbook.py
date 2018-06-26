@@ -12,11 +12,6 @@ from time import strftime
 def to_uppercase(*args):
     callsign.set(callsign.get().upper())
 #
-def CurSelet(event):
-    widget = event.widget
-    selection=widget.curselection()
-    picked = widget.get(selection[1])
-    print(picked)
 # Event function setup
 def tick():
 # get UTC date and time from datetime
@@ -28,7 +23,6 @@ def tick():
 # could use >200 ms, but display gets jerky
     clock.after(200, tick)
 #
-
 def save_qso():
 	new_qso_record = []
 	date_qso.config(state = 'normal', relief = 'flat')
@@ -47,12 +41,21 @@ def save_qso():
 	nrec7 =e7.get()
 	m=e8.get()
 	p = e9.get()
-	#print (qdate, qtime_start, qtime_end)
-	#new_qso_record = list(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, nrec5, nrec6, nrec7, state_listbox.get(state_listbox.curselection()), m, p)
-	#print(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, nrec5, nrec7, state_listbox.get(state_listbox.curselection()), m, p)
-	print(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, p, m, nrec5, nrec7, state_listbox.get(state_listbox.curselection()))
-	# create a list, then append it to the file.
 	#
+	print(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, p, m, nrec5, nrec7, state_listbox.get(state_listbox.curselection()))
+
+	# create a list, then append it to the file.
+	#new record = [qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, p, m, nrec5, nrec7, state_listbox.get(state_listbox.curselection()))]
+	# End of writing qso to log....
+	# clear fields for next qso... callsign, Name and City...leave other pre-entered fields.
+	callsign.set('')
+	e5.delete(0, 'end')
+	e5.insert(END, '')
+	e7.delete(0, 'end')
+	e7.insert(END, '')
+	# return focus back to Callsign field.
+	e1.focus()
+	# End of form clearing.
 	# reset button text
 	startq.set('Start QSO')
 	endq.set('End QSO')
@@ -349,16 +352,16 @@ save_qso = Button(top, text = 'Save QSO', command = save_qso, font = 'Piboto 16'
 save_qso.grid(row= 15, column = 1)
 save_qso.config(state = 'disabled')
 # Provide Labels for entry fields
-Label(top, text= 'Station', font = 'Piboto 14').grid(row=4)
-Label(top, text ='Frequency', font = 'Piboto 14').grid(row=5)
-Label(top, text = 'Report Sent', font = 'Piboto 14').grid(row =6)
-Label(top, text = 'Report Recvd', font = 'Piboto 14').grid(row =7)
-Label(top, text='Name', font = 'Piboto 14').grid(row=8)
+Label(top, text= 'Station', font = 'Piboto 14', anchor= 'e', width = 12).grid(row=4)
+Label(top, text ='Frequency', font = 'Piboto 14', anchor= 'e', width = 12).grid(row=5)
+Label(top, text = 'Report Sent', font = 'Piboto 14', anchor= 'e', width = 12).grid(row =6)
+Label(top, text = 'Report Recvd', font = 'Piboto 14', anchor= 'e', width = 12).grid(row =7)
+Label(top, text='Name', font = 'Piboto 14', anchor= 'e', width = 12).grid(row=8)
 #Label(top, text='Last Name', font = 'Piboto 14').grid(row=9)
-Label(top, text = 'City', font = 'Piboto 14').grid(row=10)
+Label(top, text = 'City', font = 'Piboto 14', anchor= 'e', width = 12).grid(row=10)
 Label(top, text = 'State', font = 'Piboto 14').grid(row=12, column =0)
-Label(top, text ='Power', font = 'Piboto 14').grid(row=4, column = 2)
-Label(top, text = 'Mode', font = 'Piboto 14').grid(row=5, column = 2)
+Label(top, text ='Power ', font = 'Piboto 14', anchor= 'e', width = 12).grid(row=4, column = 2)
+Label(top, text = 'Mode ', font = 'Piboto 14', anchor= 'e', width = 12).grid(row=5, column = 2)
 
 # Make a couple of check boxes for QSL Sent and QSL Rec.
 # Utilize StringVar() to toggle checbox state!!!!
@@ -408,12 +411,12 @@ for item in state_list:
 #
 #need to find a way to select from a listbox
 #
-
+#
 e3.grid(row=6, column=1)
 e3.insert(END, '59')
 e4.grid(row=7, column=1)
 e4.insert(END, '59')
-e5.grid(row=8, column =1)
+e5.grid(row=8, column =1) # Name
 #e6.grid(row=9, column =1)
 e7.grid(row=10, column =1)
 e8.grid(row = 4, column = 3)
