@@ -49,7 +49,7 @@ def save_qso():
 	p = e9.get()
 	#print (qdate, qtime_start, qtime_end)
 	#newrecord = list(nrec1, nrec2, nrec3, nrec4, nrec5, nrec6, nrec7, m, p)
-	print(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, nrec5, nrec6, nrec7, state_listbox.cuselection(), m, p)
+	print(qso_date_utc.get(), startq.get(),endq.get(), nrec1, nrec2, nrec3, nrec4, nrec5, nrec6, nrec7, state_listbox.curselection(), m, p)
 	#
 	# create a list, then append it to the file.
 	#
