@@ -32,42 +32,42 @@ def StationID():
     pass
 
 def save_qso():
-	date_qso.config(state = 'normal', relief = 'flat')
-	start_qso.config(state = 'normal', relief = 'raised')
-	end_qso.config(state = 'normal',  relief = 'raised')
-	save_qso.config(state = 'disabled')
-	clock.config(fg = 'black')
-	# here is where we construct and write to a file.
-	#qso start date
-	new_qso_record.append(qdate)
-	#qso start time
-	new_qso_record.append(qtime_start)
-	#qso end time
-	new_qso_record.append(qtime_end)
-	#
-	station= e1.get()
-	new_qso_record.append(station)
-	frq = e2.get()
-	new_qso_record.append(frq)
-	qrst = e3.get()
-	new_qso_record.append(qrst)
-	mrst = e4.get()
-	new_qso_record.append(mrst)
-	p = e8.get()
-	new_qso_record.append(p)
-	m=e9.get()
-	new_qso_record.append(m)
-	name = e5.get()
-	new_qso_record.append(name)
-	# removed e6, which was last name.. unnecessary
-	city =e7.get()
-	new_qso_record.append(city)
-	state = state_listbox.get(state_listbox.curselection())
-	new_qso_record.append(state)
-	#
-	print (new_qso_record)
-	# define list of places
-	with open(logbook, 'a') as filehandle:  
+    date_qso.config(state = 'normal', relief = 'flat')
+    start_qso.config(state = 'normal', relief = 'raised')
+    end_qso.config(state = 'normal',  relief = 'raised')
+    save_qso.config(state = 'disabled')
+    clock.config(fg = 'black')
+    # here is where we construct and write to a file.
+    #qso start date
+    new_qso_record.append(qdate)
+    #qso start time
+    new_qso_record.append(qtime_start)
+    #qso end time
+    new_qso_record.append(qtime_end)
+    #
+    station= e1.get()
+    new_qso_record.append(station)
+    frq = e2.get()
+    new_qso_record.append(frq)
+    qrst = e3.get()
+    new_qso_record.append(qrst)
+    mrst = e4.get()
+    new_qso_record.append(mrst)
+    p = e8.get()
+    new_qso_record.append(p)
+    m=e9.get()
+    new_qso_record.append(m)
+    name = e5.get()
+    new_qso_record.append(name)
+    # removed e6, which was last name.. unnecessary
+    city =e7.get()
+    new_qso_record.append(city)
+    state = state_listbox.get(state_listbox.curselection())
+    new_qso_record.append(state)
+    #
+    print (new_qso_record)
+    # define list of places
+    with open(logbook, 'a') as filehandle:  
                         for list_item in new_qso_record:
                             filehandle.write('%s ' % list_item)
                         filehandle.write('\n')
@@ -82,35 +82,36 @@ def save_qso():
                         except:
                                 print('No file exists')
                         logdata.config(state=DISABLED)
-	# End of writing qso to log....
-	#Clear the record; reset new_qso_record to empty.
-	# clear fields for next qso... callsign, Name and City...leave other pre-entered fields.
-	callsign.set('')
-	#
-	e4.delete(0, 'end')
-	e4.insert(END, '')
-	e5.delete(0, 'end')
-	e5.insert(END, '')
-	e7.delete(0, 'end') 
-	e7.insert(END, '')
-	# return focus back to Callsign field.
-	e1.focus()
-	# End of form clearing.
-	# reset button text
-	startq.set('Start QSO')
-	endq.set('End QSO')
-	qso_date_utc.set('UTC Date')
-	s_id.config(relief = 'sunken', fg ='green')
-	station_id.set('ID every ten minutes.')
-	#
-	status.set('Saving contact to logbook...')
-	time.sleep(1)
-	status.clear()
-	# Remember to use get(). to actually capture the values for the log
-	# Capture all the values and then call a function to write the record to the logbook.
-	
+    # End of writing qso to log....
+    #Clear the record; reset new_qso_record to empty.
+    # clear fields for next qso... callsign, Name and City...leave other pre-entered fields.
+    callsign.set('W5XYZ')
+    e4.delete(0, 'end')
+    e4.insert(END, '')
+    e5.delete(0, 'end')
+    e5.insert(END, '')
+    e7.delete(0, 'end') 
+    e7.insert(END, '')
+    # return focus back to Callsign field.
+    e1.focus()
+    #set e1 bg and fg attrib.
+    
+    # End of form clearing.
+    # reset button text
+    startq.set('Start QSO')
+    endq.set('End QSO')
+    qso_date_utc.set('UTC Date')
+    s_id.config(relief = 'sunken', fg ='green')
+    station_id.set('ID every ten minutes.')
+    #
+    status.set('Saving contact to logbook...')
+    time.sleep(1)
+    status.clear()
+    # Remember to use get(). to actually capture the values for the log
+    # Capture all the values and then call a function to write the record to the logbook.
+    
 def get_time_begin():
-	# get UTC date and time from datetime
+    # get UTC date and time from datetime
     utc_date()
     status.set('Inital QSO date is set...')
     time.sleep(1)
@@ -147,14 +148,14 @@ def get_time_end():
     
     # changed function from get_utc_date(): to utc_date():
 def utc_date():
-	get_utc_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-	qso_date_utc.set(get_utc_date)
-	global qdate; qdate = get_utc_date
-	status.set('UTC Date retrieved...')
-	time.sleep(1)
-	status.clear()
-	print (qdate)
-	
+    get_utc_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    qso_date_utc.set(get_utc_date)
+    global qdate; qdate = get_utc_date
+    status.set('UTC Date retrieved...')
+    time.sleep(1)
+    status.clear()
+    print (qdate)
+    
 def close_log():
     status.set('Closes the current logbook...')
     messagebox.askyesno('Close', 'Close the current logbook?')
@@ -201,7 +202,7 @@ def open_log():
     status.set('Selected Logbook open')
     time.sleep(2)
     status.clear()
-    status.set('Selected Logbook open')
+    
 #
 #This is where we lauch the file manager bar.
 #
