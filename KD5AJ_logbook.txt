@@ -1,0 +1,23 @@
+KD5AJ Personal Logbook		QTH: Brinkley, AR	Operator: Kelly Mabry
+2019-06-10 22:56:00 23:00:08 K5DOX 07.176  59  59 100 A3J Rick San Antonio TX - Texas 
+2019-06-11 00:53:59 00:54:39 WP4SD 14.210  59  57 100 A3J Tito San German, PR - Puerto Rico 
+2019-06-11 01:05:13 01:05:18 TI8II 14.215  59  59 100 A3J Carlos Puntarenas, Costa Rica DX - Non US 
+2019-06-11 01:25:19 01:25:31 GB19BG 14.250  59  59 100 A3J John Bristol, England DX - Non US 
+2019-06-11 02:13:09 02:13:18 CM3EFM 07.145  59  59 100 A3J Eddy Artemisa, Cuba DX - Non US 
+2019-06-11 03:08:24 03:15:49 W5NQH 07.137  59  59 100 A3J Dave Odessa TX - Texas 
+2019-06-11 20:46:14 20:54:52 KE0SSP 14.156  59  59 100 A3J Bob El Dora IA - Iowa 
+2019-06-12 00:44:13 00:45:26 YY3CXA 07.153  59  59 100 A3J Carlos Carora Estada 3500 Venezuela DX - Non US 
+2019-06-12 07:01:58 07:14:14 N9EP 3.530 599 579 100  CW Ed Deer Park IL - Illinois 
+2019-06-12 13:00:55 13:02:55 W3RAR 14.275  57  59 100 A3J Robert Hanover PA - Pennsylvania 
+2019-06-13 20:58:53 20:59:00 S51DX 14.234  59  57 100 A3J Yannes Slovenia DX - Non US 
+2019-06-14 18:32:52 18:34:13 W1AW 14.264  59  59 100 A3J Suzanne Newington CT - connecticut 
+2019-06-14 18:57:23 19:09:21 K1HV 07.280  59  59 100 A3J Jerry Waverly TN - Tennessee 
+2019-06-14 20:30:57 20:50:48 N5IIA 14.156 52  59 100 A3J Glenn Iola WI - Wisconson 
+2019-06-14 21:26:28 21:27:20 W4JL 07.232  59  57 100 A3J Dave Marion NC - North Carolina 
+2019-06-14 21:29:11 21:29:58 NC4WD 07.228  59 57 100 A3J Josh Wilkesborough NC - North Carolina 
+2019-06-14 21:32:56 21:36:54 KG5PJG 07.228  59  52 100 A3J Slyvia Stillwater OK - Oklahoma 
+2019-06-16 15:42:22 15:43:41 AL2C 07.188  59  59 100 A3J Larry Battleship AL - Alabama 
+2019-06-16 18:07:53 18:09:21 KN4HPJ 14.310  59  59 100 A3J Joe Gettysburg PA - Pennsylvania 
+2019-06-18 18:08:15 18:10:47 NS5P 07.205  58  58 100 A3J Robert Texarkana TX - Texas 
+2019-06-18 18:32:06 18:40:24 K4XJ 07.145  59  57 100 A3J Mark Thompkinsville KY - Kentucky 
+2019-06-20 15:27:29 15:33:59 W5URX 14.200  59  58 100 A3J Scott Lawton OK - Oklahoma 
